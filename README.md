@@ -18,7 +18,7 @@ The extensions serve diverse purposes:
 - metadata to represent dynamic values associated with fields:
     * `rcsb_current_maximum_value`
     * `rcsb_current_minimum_value`
-- metadata used in text-indexing:
+- metadata used for text-indexing:
     * `rcsb_search_context`   
     * `rcsb_full_text_priority`
     * `rcsb_nested_indexing`

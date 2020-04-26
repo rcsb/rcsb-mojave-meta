@@ -21,7 +21,6 @@
 
         <!-- rcsb-json-schema project is built continuously for a branch -->
         <rcsb-json-schema.version>master-SNAPSHOT</rcsb-json-schema.version>
-
         <mojave.tools.version>1.0.2</mojave.tools.version>
 
     </properties>
