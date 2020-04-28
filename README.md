@@ -22,6 +22,7 @@ The extensions serve diverse purposes:
     * `rcsb_search_context`   
     * `rcsb_full_text_priority`
     * `rcsb_nested_indexing`
+    * `rcsb_nested_indexing_context`
         
 ## Tying Meta-Schema to Types
 Code is generated in the `generate-sources` phase during the project build. Generation works by calling the following 
