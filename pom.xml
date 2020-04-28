@@ -17,11 +17,13 @@
         <jdk.version>1.8</jdk.version>
 
         <project.meta.package>org.rcsb.mojave.meta</project.meta.package>
-        <meta.schema.location>generated-sources/schema/meta</meta.schema.location>
+        <meta.schema.name>json-meta-schema-rcsb-extensions.json</meta.schema.name>
+        <meta.schema.dir>schema/meta</meta.schema.dir>
+        <meta.schema.location>generated-sources/${meta.schema.dir}</meta.schema.location>
 
         <!-- rcsb-json-schema project is built continuously for a branch -->
         <rcsb-json-schema.version>master-SNAPSHOT</rcsb-json-schema.version>
-        <mojave.tools.version>1.0.2</mojave.tools.version>
+        <mojave.tools.version>1.0.3-SNAPSHOT</mojave.tools.version>
 
     </properties>
 
@@ -115,11 +117,13 @@
                             <arguments>
                                 <!-- where to put final schema -->
                                 <argument>-o</argument>
-                                <argument>${project.build.directory}/${meta.schema.location}/json-meta-schema-rcsb-extensions.json</argument>
+                                <argument>${project.build.directory}/${meta.schema.location}/${meta.schema.name}</argument>
                                 <!-- list of schemas to stitch -->
                                 <argument>-i</argument>
                                 <argument>jar:/meta/json-schema-draft-07.json</argument>
                                 <argument>jar:/meta/json-schema-rcsb-extensions.json</argument>
+                                <argument>-s</argument>
+                                <argument>${meta.schema.dir}/${meta.schema.name}</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -172,6 +176,9 @@
                                 <!-- Whether to add a suffix to generated classes. -->
                                 <argument>-s</argument>
                                 <argument>Enum</argument>
+                                <!-- Dynamically resolve references -->
+                                <argument>-d</argument>
+                                <argument>true</argument>
                             </arguments>
                         </configuration>
                     </execution>
