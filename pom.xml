@@ -23,7 +23,7 @@
         <meta.schema.location>generated-sources/${meta.schema.dir}</meta.schema.location>
 
         <rcsb-json-schema.version>1.11.0</rcsb-json-schema.version>
-        <mojave.tools.version>1.1.0</mojave.tools.version>
+        <mojave.tools.version>1.2.4</mojave.tools.version>
 
     </properties>
 
