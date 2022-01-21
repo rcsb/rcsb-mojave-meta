@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetEncoding>UTF-8</project.build.targetEncoding>
 
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>11</jdk.version>
 
         <project.meta.package>org.rcsb.mojave.meta</project.meta.package>
         <meta.schema.name>json-meta-schema-rcsb-extensions.json</meta.schema.name>
@@ -23,7 +23,7 @@
         <meta.schema.location>generated-sources/${meta.schema.dir}</meta.schema.location>
 
         <rcsb-json-schema.version>1.22.2</rcsb-json-schema.version>
-        <mojave.tools.version>1.3.0</mojave.tools.version>
+        <mojave.tools.version>1.5.0</mojave.tools.version>
 
     </properties>
 
