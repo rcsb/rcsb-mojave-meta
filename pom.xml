@@ -22,7 +22,7 @@
         <meta.schema.dir>schema/meta</meta.schema.dir>
         <meta.schema.location>generated-sources/${meta.schema.dir}</meta.schema.location>
 
-        <rcsb-json-schema.version>1.22.2</rcsb-json-schema.version>
+        <rcsb-json-schema.version>1.31.0</rcsb-json-schema.version>
         <mojave.tools.version>1.5.0</mojave.tools.version>
 
     </properties>
