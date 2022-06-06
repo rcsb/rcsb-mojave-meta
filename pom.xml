@@ -29,15 +29,15 @@
     </properties>
 
     <distributionManagement>
-        <downloadUrl>http://nexus3.rcsb.org/repository/rcsb-super-proxy/</downloadUrl>
+        <downloadUrl>https://nexus3.rcsb.org/repository/rcsb-super-proxy/</downloadUrl>
         <repository>
             <id>releases</id>
             <name>RCSB PDB Maven Repository</name>
-            <url>http://nexus3.rcsb.org/repository/maven-releases/</url>
+            <url>https://nexus3.rcsb.org/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>http://nexus3.rcsb.org/repository/maven-snapshots/</url>
+            <url>https://nexus3.rcsb.org/repository/maven-snapshots/</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
