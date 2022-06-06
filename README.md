@@ -1,12 +1,12 @@
 # RCSB-MOJAVE-META
 
+The repository contains JSON schema specification files and RCSB extensions.
+
 The repository contains Java types and constants for the JSON schema meta-schema itself. The [JSON Schema 
 core specification](http://json-schema.org/latest/json-schema-core.html) defines terminology 
 and describes validation keywords used to write JSON Schema instances. We also define custom vocabulary 
 that extend core keywords by adding new properties to the JSON Schema draft. Custom properties are appended 
 under `rcsb_` namespace to indicate provenance.
- 
-The draft and extensions are stored in [rcsb-json-schema](https://github.com/rcsb/rcsb-json-schema) repository.
 
 ## Custom JSON Schema Meta-Schema Extensions
 The extensions serve diverse purposes:

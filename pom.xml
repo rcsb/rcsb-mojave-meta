@@ -8,7 +8,7 @@
 
     <groupId>org.rcsb</groupId>
     <artifactId>rcsb-mojave-meta</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.1-SNAPSHOT</version>
 
     <properties>
 
@@ -29,15 +29,15 @@
     </properties>
 
     <distributionManagement>
-        <downloadUrl>https://nexus3.rcsb.org/repository/rcsb-super-proxy/</downloadUrl>
+        <downloadUrl>http://nexus3.rcsb.org/repository/rcsb-super-proxy/</downloadUrl>
         <repository>
             <id>releases</id>
             <name>RCSB PDB Maven Repository</name>
-            <url>https://nexus3.rcsb.org/repository/maven-releases/</url>
+            <url>http://nexus3.rcsb.org/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>https://nexus3.rcsb.org/repository/maven-snapshots/</url>
+            <url>http://nexus3.rcsb.org/repository/maven-snapshots/</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
