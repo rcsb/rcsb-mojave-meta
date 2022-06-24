@@ -61,17 +61,7 @@
     </dependencies>
 
     <build>
-
-<!--        &lt;!&ndash; Configure resources distribution &ndash;&gt;-->
-<!--        <resources>-->
-<!--            <resource>-->
-<!--                <directory>${project.build.directory}/generated-sources/classes/${schema.spec.directory}</directory>-->
-<!--                <excludes>-->
-<!--                    <exclude>**/*</exclude>-->
-<!--                </excludes>-->
-<!--            </resource>-->
-<!--        </resources>-->
-
+        
         <plugins>
 
             <plugin>
