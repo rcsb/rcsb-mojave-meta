@@ -8,7 +8,7 @@
 
     <groupId>org.rcsb</groupId>
     <artifactId>rcsb-mojave-meta</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.2-SNAPSHOT</version>
 
     <properties>
 
@@ -17,13 +17,14 @@
 
         <jdk.version>11</jdk.version>
 
-        <schema.spec.dir>json-schema-spec</schema.spec.dir>
-        <schema.spec.source.location>${project.basedir}/${schema.spec.dir}</schema.spec.source.location>
-        <schema.spec.target.location>${project.build.directory}/generated-sources/${schema.spec.dir}</schema.spec.target.location>
+        <schema.spec.directory>json-schema-spec</schema.spec.directory>
+        <schema.spec.source>${project.basedir}/src/main/resources/${schema.spec.directory}</schema.spec.source>
+        <schema.spec.draft7>json-schema-draft-07.json</schema.spec.draft7>
+        <schema.spec.rcsb.extensions>json-schema-rcsb-extensions.json</schema.spec.rcsb.extensions>
+
+        <schema.spec.target>${project.build.directory}/generated-sources/${schema.spec.directory}</schema.spec.target>
         <schema.spec.target.name>json-schema-spec-rcsb-extensions.json</schema.spec.target.name>
-
         <project.meta.package>org.rcsb.mojave.meta</project.meta.package>
-
         <mojave.tools.version>1.6.0</mojave.tools.version>
 
     </properties>
@@ -60,34 +61,7 @@
     </dependencies>
 
     <build>
-
-        <!-- Additional resources included for distribution -->
-        <resources>
-            <resource>
-                <directory>${project.basedir}/${schema.spec.dir}</directory>
-                <includes>
-                    <include>
-                        json-schema-draft-07.json
-                    </include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>${schema.spec.target.location}</directory>
-                <includes>
-                    <include>
-                        ${schema.spec.target.name}
-                    </include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>${project.build.directory}/generated-sources/classes/org/rcsb/mojave/meta</directory>
-                <includes>
-                    <include>*</include>
-                    <include>*/*</include>
-                </includes>
-            </resource>
-        </resources>
-
+        
         <plugins>
 
             <plugin>
@@ -103,7 +77,6 @@
 
             <!-- Executes Java programs -->
             <plugin>
-
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
@@ -128,14 +101,14 @@
                             <arguments>
                                 <!-- where to put final schema -->
                                 <argument>-o</argument>
-                                <argument>${schema.spec.target.location}/${schema.spec.target.name}</argument>
+                                <argument>${schema.spec.target}/${schema.spec.target.name}</argument>
                                 <!-- list of schemas to stitch -->
                                 <argument>-i</argument>
-                                <argument>file:${schema.spec.source.location}/json-schema-draft-07.json</argument>
-                                <argument>file:${schema.spec.source.location}/json-schema-rcsb-extensions.json</argument>
+                                <argument>file:${schema.spec.source}/${schema.spec.draft7}</argument>
+                                <argument>file:${schema.spec.source}/${schema.spec.rcsb.extensions}</argument>
                                 <!-- overrides $id property with this value-->
                                 <argument>-s</argument>
-                                <argument>${schema.spec.dir}/${schema.spec.target.name}</argument>
+                                <argument>${schema.spec.directory}/${schema.spec.target.name}</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -153,7 +126,7 @@
                             <arguments>
                                 <!-- Location of the JSON Schema file(s). -->
                                 <argument>-i</argument>
-                                <argument>${schema.spec.target.location}/${schema.spec.target.name}</argument>
+                                <argument>${schema.spec.target}/${schema.spec.target.name}</argument>
                                 <!-- Target directory for generated Java source files. -->
                                 <argument>-o</argument>
                                 <argument>${project.build.directory}/generated-sources/classes</argument>
@@ -177,7 +150,7 @@
                             <arguments>
                                 <!-- Location of the JSON Schema file(s). -->
                                 <argument>-i</argument>
-                                <argument>${schema.spec.target.location}</argument>
+                                <argument>${schema.spec.target}</argument>
                                 <!-- Target directory for generated Java source files. -->
                                 <argument>-o</argument>
                                 <argument>${project.build.directory}/generated-sources/classes</argument>
